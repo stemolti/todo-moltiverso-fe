@@ -3,12 +3,11 @@ import { Injectable } from '@angular/core'
 import { Todo } from '../entities/todo.entity'
 import { isExpired } from '../utils/is-expired'
 import { Observable } from 'rxjs'
-import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
-export class TodoSourceService {
+export class TodoService {
   constructor(protected http: HttpClient) {}
 
   fetch(showCompleted: boolean) {
