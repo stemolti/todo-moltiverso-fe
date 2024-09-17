@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 import { BehaviorSubject, map, tap } from 'rxjs'
 import { JWTService } from './jwt.service'
-import { environment } from '../../environments/environment'
 import { User } from '../entities/user.entity'
 
 @Injectable({ providedIn: 'root' })
