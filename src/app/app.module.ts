@@ -17,7 +17,8 @@ import { NavbarComponent } from './components/navbar/navbar.component'
 import { RegisterComponent } from './pages/register/register.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { FloatLabelModule } from 'primeng/floatlabel'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,15 @@ import { BrowserModule } from '@angular/platform-browser'
     NavbarComponent,
     RegisterComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FloatLabelModule
+  ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, TodoService],
   bootstrap: [AppComponent]
 })
