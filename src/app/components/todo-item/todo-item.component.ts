@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { Todo } from '../../entities/todo.entity'
-import { TodoSourceService } from '../../services/todo-source.service'
+import { TodoService } from '../../services/todo.service'
 
 @Component({
   selector: 'app-todo-item',
@@ -15,7 +15,7 @@ export class TodoItemComponent {
 
   @Output() checked = new EventEmitter<[string, boolean, string]>()
 
-  constructor(protected todoSrv: TodoSourceService) {}
+  constructor(protected todoSrv: TodoService) {}
 
   onChange(id: string, event: Event, dueDate: string) {
     const checked = (event.target as HTMLInputElement).checked

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
-import { TodoSourceService } from '../../services/todo-source.service'
+import { TodoService } from '../../services/todo.service'
 import { ReplaySubject, Subject, switchMap, takeUntil } from 'rxjs'
 
 @Component({
@@ -13,11 +13,11 @@ export class TodoListComponent implements OnInit, OnDestroy {
 
   protected _todos$ = new ReplaySubject<void>()
   todos$ = this._todos$.pipe(
-    switchMap(() => this.todoSourceService.fetch(this.showCompleted)),
+    switchMap(() => this.todoService.fetch(this.showCompleted)),
     takeUntil(this.destroyed$)
   )
 
-  constructor(protected todoSourceService: TodoSourceService) {}
+  constructor(protected todoService: TodoService) {}
 
   ngOnInit(): void {
     this._todos$.next()
@@ -29,13 +29,13 @@ export class TodoListComponent implements OnInit, OnDestroy {
   }
 
   onCheckboxChange(todo: [string, boolean, string]) {
-    this.todoSourceService.check(todo[0], todo[1], todo[2]).subscribe(() => {
+    this.todoService.check(todo[0], todo[1], todo[2]).subscribe(() => {
       this._todos$.next()
     })
   }
 
   addTodo(data: [string, string, string]) {
-    this.todoSourceService.add(data[0], data[1], data[2]).subscribe(() => {
+    this.todoService.add(data[0], data[1], data[2]).subscribe(() => {
       this._todos$.next()
     })
   }
