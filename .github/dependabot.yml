@@ -1,0 +1,36 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    ignore:
+      - dependency-name: '@angular/animations'
+        versions: ['18.x']
+      - dependency-name: '@angular/common'
+        versions: ['18.x']
+      - dependency-name: '@angular/compiler'
+        versions: ['18.x']
+      - dependency-name: '@angular/core'
+        versions: ['18.x']
+      - dependency-name: '@angular/forms'
+        versions: ['18.x']
+      - dependency-name: '@angular/platform-browser'
+        versions: ['18.x']
+      - dependency-name: '@angular/platform-browser-dynamic'
+        versions: ['18.x']
+      - dependency-name: '@angular/router'
+        versions: ['18.x']
+      - dependency-name: '@angular-devkit/build-angular'
+        versions: ['18.x']
+      - dependency-name: '@angular/cli'
+        versions: ['18.x']
+      - dependency-name: '@angular/compiler-cli'
+        versions: ['18.x']
+      - dependency-name: '@angular/localize'
+        versions: ['18.x']
