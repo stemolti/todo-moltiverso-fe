@@ -6,7 +6,7 @@ import { AuthService } from './services/auth.service'
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'todo-moltiverso'
+  title = 'todo-frontend'
 
   currentUser$ = this.authSrv.currentUser$
 

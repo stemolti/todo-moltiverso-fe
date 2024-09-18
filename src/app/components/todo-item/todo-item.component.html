@@ -1,0 +1,54 @@
+<!-- <div
+  [class.tw-bg-success]="todo.completed"
+  class="tw-card tw-border-2 tw-m-5 tw-bg-base-100 tw-shadow-xl"
+  *ngIf="todo">
+  <div class="tw-card-body">
+    <div
+      [class.tw-hidden]="!todo.expired"
+      class="tw-badge tw-badge-primary tw-bg-error tw-border-error">
+      EXPIRED
+    </div>
+    <h2 [class.tw-text-success-content]="todo.completed" class="tw-card-title">
+      {{ todo.title }}
+    </h2>
+    <p [class.tw-text-success-content]="todo.completed">
+      {{ todo.dueDate == undefined ? 'No due date' : 'Due on ' + (todo.dueDate | date) }}
+    </p>
+    <div class="tw-flex tw-items-center">
+      <p
+        class="tw-m-auto tw-max-w-80 tw-min-w-0 tw-overflow-hidden"
+        [class.tw-text-success-content]="todo.completed">
+        <span class="tw-font-semibold">Created by</span> {{ todo.createdBy.fullName }}
+      </p>
+      <img
+        class="tw-w-10 tw-h-10 tw-object-cover tw-m-auto tw-rounded-full"
+        [src]="todo.createdBy.picture"
+        alt="Creator avatar" />
+    </div>
+    <div class="tw-flex" *ngIf="todo.assignedTo">
+      <p
+        class="tw-m-auto tw-max-w-80 tw-min-w-0 tw-overflow-hidden"
+        [class.tw-text-success-content]="todo.completed">
+        <span class="tw-font-semibold">Assigned to</span> {{ todo.assignedTo.fullName }}
+      </p>
+      <img
+        class="tw-w-10 tw-h-10 tw-object-cover tw-m-auto tw-rounded-full"
+        [src]="todo.assignedTo.picture"
+        alt="Assigned user avatar" />
+    </div>
+    <app-assign-modal (assignTodo)="assign($event)" *ngIf="!todo.assignedTo"></app-assign-modal>
+    <div class="tw-form-control">
+      <label class="tw-label tw-cursor-pointer">
+        <span [class.tw-text-success-content]="todo.completed" class="tw-label-text"
+          >Completed</span
+        >
+        <input
+          type="checkbox"
+          [(ngModel)]="todo.completed"
+          (change)="onChange(todo.id, $event, todo.dueDate)"
+          class="tw-checkbox tw-checkbox-primary tw-rounded-full"
+          [checked]="todo.completed" />
+      </label>
+    </div>
+  </div>
+</div> -->
