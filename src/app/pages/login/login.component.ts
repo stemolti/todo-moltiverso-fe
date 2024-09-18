@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
-import { FormBuilder, Validators } from '@angular/forms'
-import { Router } from '@angular/router'
 import { Subject, catchError, takeUntil, throwError } from 'rxjs'
 import { AuthService } from '../../services/auth.service'
+import { Router } from '@angular/router'
+import { Validators, FormBuilder } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service'
 })
 export class LoginComponent implements OnInit, OnDestroy {
   loginForm = this.fb.group({
-    username: ['', { validators: Validators.required }],
+    email: ['', { validators: Validators.required }],
     password: ['', { validators: Validators.required }]
   })
 
@@ -37,9 +37,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login() {
     if (this.loginForm.valid) {
-      const { username, password } = this.loginForm.value
+      const { email, password } = this.loginForm.value
       this.authSrv
-        .login(username!, password!)
+        .login(email!, password!)
         .pipe(
           catchError((err) => {
             this.loginError = err.error.message

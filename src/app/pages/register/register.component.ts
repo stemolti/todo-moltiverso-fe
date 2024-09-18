@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
-import { Validators, FormBuilder } from '@angular/forms'
-import { Router } from '@angular/router'
 import { Subject, takeUntil, catchError, throwError } from 'rxjs'
 import { AuthService } from '../../services/auth.service'
+import { Validators, FormBuilder } from '@angular/forms'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-register',
@@ -12,10 +12,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
   registrationForm = this.fb.group({
     firstName: ['', { validators: Validators.required }],
     lastName: ['', { validators: Validators.required }],
-    username: ['', { validators: Validators.required }],
+    email: ['', { validators: Validators.required }],
     password: ['', { validators: Validators.required }],
     confirmPassword: ['', { validators: Validators.required }],
-    picture: ['', { validators: Validators.required }]
+    profilePicture: ['', { validators: Validators.required }]
   })
 
   registrationError = ''
@@ -41,9 +41,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   signUp() {
     if (this.registrationForm.valid) {
-      const { firstName, lastName, username, password, picture } = this.registrationForm.value
+      const { firstName, lastName, email, password, profilePicture } = this.registrationForm.value
       this.authSrv
-        .register(firstName!, lastName!, username!, password!, picture!)
+        .register(firstName!, lastName!, email!, password!, profilePicture!)
         .pipe(
           catchError((err) => {
             this.registrationError = err.error.message
