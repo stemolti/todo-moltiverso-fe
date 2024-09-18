@@ -5,6 +5,5 @@ import { Component, Input } from '@angular/core'
   templateUrl: './footer.component.html'
 })
 export class FooterComponent {
-  @Input()
-  footerText!: string
+
 }

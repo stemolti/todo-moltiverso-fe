@@ -23,12 +23,12 @@ export class AuthService {
     return this.jwtSrv.hasToken()
   }
 
-  login(username: string, password: string) {
+  login(email: string, password: string) {
     return this.http
       .post<{
         user: User
         token: string
-      }>(`/api/login`, { username, password })
+      }>(`/api/login`, { email, password })
       .pipe(
         tap((res) => this.jwtSrv.setToken(res.token)),
         tap((res) => this._currentUser$.next(res.user)),
@@ -39,16 +39,16 @@ export class AuthService {
   register(
     firstName: string,
     lastName: string,
-    username: string,
+    email: string,
     password: string,
-    picture: string
+    profilePicture: string
   ) {
     return this.http.post(`/api/register`, {
       firstName,
       lastName,
-      username,
+      email,
       password,
-      picture
+      profilePicture
     })
   }
 
