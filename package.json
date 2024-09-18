@@ -19,9 +19,8 @@
     "@angular/router": "^17.3.8",
     "@ngx-translate/core": "^15.0.0",
     "@popperjs/core": "^2.11.8",
+    "@tailwindcss/typography": "^0.5.15",
     "bootstrap": "^5.3.3",
-    "primeicons": "^7.0.0",
-    "primeng": "^17.18.10",
     "rxjs": "~7.8.0",
     "tslib": "^2.6.3",
     "zone.js": "~0.14.8"
@@ -33,6 +32,7 @@
     "@angular/localize": "^17.3.8",
     "@types/jasmine": "~5.1.0",
     "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.10",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.4",
     "karma-chrome-launcher": "~3.2.0",
